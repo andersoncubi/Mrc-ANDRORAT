@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrc Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <header>
+            <h1>Mrc Calculator</h1>
+            <div class="live-data">
+                <div class="price-item">
+                    <span>BTC/USD:</span>
+                    <span id="btc-price">Cargando...</span>
+                </div>
+                <div class="price-item">
+                    <span>USD/CLP:</span>
+                    <span id="usd-price">Cargando...</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="calculator">
+            <div class="input-group">
+                <label for="btc">BTC</label>
+                <input type="number" id="btc" placeholder="0.00">
+            </div>
+            <div class="input-group">
+                <label for="usd">USD</label>
+                <input type="number" id="usd" placeholder="0.00">
+            </div>
+            <div class="input-group">
+                <label for="clp">CLP</label>
+                <input type="number" id="clp" placeholder="0.00">
+            </div>
+            <button id="buy-btn" class="glow-on-hover">Solicitar Compra</button>
+        </main>
+    </div>
+
+    <!-- Modal de Compra -->
+    <div id="buy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Confirmar Solicitud</h2>
+            <p id="modal-summary">Estás a punto de solicitar una compra.</p>
+            <div class="input-group">
+                <label for="user-id">Tu ID de Usuario</label>
+                <input type="text" id="user-id" placeholder="Ingresa tu ID de Telegram o Email">
+            </div>
+            <button id="confirm-purchase-btn">Confirmar y Enviar</button>
+            <p id="modal-status"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
